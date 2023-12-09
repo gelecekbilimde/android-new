@@ -9,7 +9,9 @@ import androidx.navigation.findNavController
 import com.google.firebase.FirebaseApp
 import dagger.hilt.android.AndroidEntryPoint
 import org.gelecekbilimde.R
+import org.gelecekbilimde.data.model.Channel
 import org.gelecekbilimde.databinding.ActivityMainBinding
+import org.gelecekbilimde.firebase.fcm.FirebaseFCM
 import org.gelecekbilimde.util.GeneralUtil
 
 /**
@@ -33,6 +35,9 @@ class MainActivity : AppCompatActivity() {
         }
         navController = findNavController(R.id.navHostFragment)
         setupSmoothBottomMenu()
+
+        FirebaseFCM.instance.initializePushNotification(this, R.drawable.icon, listOf(Channel("1", "General")))
+
     }
 
     private fun setupSmoothBottomMenu() {

@@ -15,10 +15,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import dagger.hilt.android.AndroidEntryPoint
 import org.gelecekbilimde.R
-import org.gelecekbilimde.data.entity.Article
-import org.gelecekbilimde.data.entity.MarkedArticle
-import org.gelecekbilimde.data.entity.MarkedVideo
-import org.gelecekbilimde.data.entity.Video
 import org.gelecekbilimde.data.model.SectionType
 import org.gelecekbilimde.databinding.FragmentDetailArticleBinding
 import org.gelecekbilimde.util.HtmlHelper.htmlInject
@@ -85,6 +81,8 @@ class ArticleDetailFragment : Fragment(R.layout.fragment_detail_article) {
 
             articleWebview.settings.javaScriptEnabled = true
             articleWebview.loadData(encodedHtml, "text/html", "base64")
+            articleWebview.settings.builtInZoomControls = true
+            articleWebview.settings.displayZoomControls = true
             articleWebview.visibility = View.GONE
             notInitImage.visibility = View.VISIBLE
             notInitText.visibility = View.VISIBLE

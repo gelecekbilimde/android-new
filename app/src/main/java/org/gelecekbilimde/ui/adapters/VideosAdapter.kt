@@ -45,7 +45,7 @@ class VideosAdapter(var context: Context, var itemClickListener: ItemClickListen
         return VideoViewHolder(binding)
     }
 
-    @SuppressLint("SimpleDateFormat")
+    @SuppressLint("SimpleDateFormat", "SetTextI18n")
     override fun onBindViewHolder(holder: VideoViewHolder, position: Int) {
         val videoItem = videoList[position]
 
@@ -55,7 +55,11 @@ class VideosAdapter(var context: Context, var itemClickListener: ItemClickListen
             titleName.text = videoItem.videoTitle ?: ""
             channelName.text = videoItem.channelTitle ?: ""
             videoDate.text = videoItem.videoCreateAtDate?.toSimpleDate() ?: ""
-            description.text = (videoItem.videoDescription?.substring(1, 50) + "... ") ?: ""
+            if (videoItem.videoDescription?.length!! > 50) {
+                description.text = (videoItem.videoDescription.substring(1, 50) + "... ")
+            } else {
+                description.text = videoItem.videoDescription
+            }
         }
 
         Glide.with(context).load(videoItem.videoThumbnailUrl).centerCrop()

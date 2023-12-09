@@ -17,11 +17,11 @@ import java.util.*
 @Parcelize
 @Entity(tableName = "article_table")
 data class Article(
-    @TypeConverters(Converters::class)
     @PrimaryKey(autoGenerate = true)
     var articleId: Int? = null,
     val articleTitle: String?,
     val articleContent: String?,
+    @TypeConverters(Converters::class)
     val articleCategory: MutableList<Categories>?,
     val articleImageUrl: String,
     val authorId: Int?,

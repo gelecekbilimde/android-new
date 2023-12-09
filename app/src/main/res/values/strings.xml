@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Gelecek Bilimde</string>
+    <string name="app_name" translatable="false">Gelecek Bilimde</string>
+    <string name="default_notification_channel" translatable="false">default_notification_channel</string>
+    <string name="default_notification">Default Notification</string>
     <string name="article">Article</string>
     <string name="videos">Videos</string>
     <string name="marked">Marked</string>
