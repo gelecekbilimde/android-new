@@ -109,10 +109,10 @@ class ArticleViewModel @Inject constructor(private val articleRepository: Articl
                                         articleTitle = item.title?.rendered?.htmlToString()?.replace("\\n", "")?.replace("\\\"", ""),
                                         articleCategory = categoryList,
                                         authorId = item.author,
-                                        authorName = item.author_info?.name.toString(),
-                                        authorUrl = item.author_info?.url.toString(),
+                                        authorName = item.authorInfo?.name.toString(),
+                                        authorUrl = item.authorInfo?.url.toString(),
                                         articleContent = item.content?.rendered.toString(),
-                                        articleImageUrl = item.featured_image_urls?.full?.get(0).toString(),
+                                        articleImageUrl = item.featuredImageUrls?.full?.get(0).toString(),
                                         isBookmark = isBookmarks,
                                         articleCreateAtDate = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(item.date.toString()
                                         )

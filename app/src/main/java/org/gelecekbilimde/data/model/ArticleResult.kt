@@ -7,6 +7,7 @@ package org.gelecekbilimde.data.model
  */
 
 import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -16,9 +17,11 @@ data class ArticleResult(
     val author: Int? = null,
     val categories: List<Int>? = null,
     val tags: List<Int>? = null,
-    val featured_image_urls: FeaturedImageUrls? = null,
+    @SerializedName("featured_image_urls_v2")
+    val featuredImageUrls: FeaturedImageUrls? = null,
     val title: Rendered? = null,
-    val author_info: AuthorInfo? = null,
+    @SerializedName("author_info_v2")
+    val authorInfo: AuthorInfo? = null,
     val content: Rendered? = null,
     val excerpt: Rendered? = null,
 ) : Parcelable

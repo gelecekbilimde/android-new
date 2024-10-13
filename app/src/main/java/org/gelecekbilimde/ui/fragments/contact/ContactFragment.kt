@@ -43,20 +43,8 @@ class ContactFragment : Fragment(R.layout.fragment_contact) {
             donationCard.setOnClickListener {
                 UrlOpen(DONATION_URL)
             }
-            twitchCard.setOnClickListener {
-                UrlOpen(TWITCH_URL)
-            }
             youtubeCard.setOnClickListener {
                 UrlOpen(YOUTUBE_URL)
-            }
-            twitterCard.setOnClickListener {
-                UrlOpen(TWITTER_URL)
-            }
-            instagramCard.setOnClickListener {
-                UrlOpen(INSTAGRAM_URL)
-            }
-            spotifyCard.setOnClickListener {
-                UrlOpen(SPOTIFY_URL)
             }
             starCard.setOnClickListener {
                 val detailsUri = Uri.parse("market://details?id=" + (context?.packageName))

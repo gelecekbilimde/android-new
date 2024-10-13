@@ -1,47 +1,50 @@
-# Basic Dictionary
-#### A simple Basic App Dictionary build to demonstrate the use of modern android architecture component with MVVM Architecture 🏗
+# Gelecek Bilimde Community Science Communication App
 
-The App is using the [Dictionary Api] to translate word.
+This repository provides a starting point for Android applications following the **MVVM architecture pattern** (Model-View-ViewModel). It aims to promote clean code practices, separation of concerns, and ease of testing.
 
-### Build With 🏗️
-- [Kotlin] - Programming language for Android
-- [Hilt-Dagger] - Standard library to incorporate Dagger dependency injection into an Android application.
-- [Retrofit] -  A type-safe HTTP client for Android and Java.
-- [Room] - SQLite object mapping library.
-- [Coroutines] - For asynchronous
-- [LiveData] - Data objects that notify views when the underlying database changes.
-- [ViewModel] - Stores UI-related data that isn't destroyed on UI changes.
-- [ViewBinding] - Generates a binding class for each XML layout file present in that module and allows you to more easily write code that interacts with views.
-- [Jetpack Navigation] - Navigation refers to the interactions that allow users to navigate across, into, and back out from the different pieces of content within your app
-   
-   [ViewModel]: <https://developer.android.com/topic/libraries/architecture/viewmodel>  
-   [Jetpack Navigation]: <https://developer.android.com/guide/navigation/>  
-   [Hilt-Dagger]: <https://dagger.dev/hilt/>  
-   [DataStore]: <https://developer.android.com/topic/libraries/architecture/datastore>
-   [ViewBinding]: <https://developer.android.com/topic/libraries/view-binding>
-   [LiveData]: <https://developer.android.com/topic/libraries/architecture/livedata/>
-   [Retrofit]: <https://square.github.io/retrofit/>
-   [ViewModel]: <https://developer.android.com/topic/libraries/architecture/viewmodel>
-   [Kotlin]: <https://kotlinlang.org>
-   [Coroutines]: <https://kotlinlang.org/docs/coroutines-overview.html>
-   [MVVM (Model View View-Model)]: <https://developer.android.com/jetpack/guide#recommended-app-arch>
-   [Dictionary Api]: <https://api.dictionaryapi.dev/>
-   [Room]: <https://developer.android.com/training/data-storage/room/>
-   
-### Project Architecture 🗼
+## 📐 Project Architecture
 
-This app uses [MVVM (Model View View-Model)] architecture.
+This app is built on the **MVVM architecture pattern**, which ensures a well-structured and maintainable codebase. Here's an overview of the three key components:
 
+- **Model**:  
+  Responsible for data handling and business logic. It is independent of the UI and handles tasks like fetching remote or local data.
 
-### Project Run
-- You need these files to run the project or you can create it yourself for testing
+- **View**:  
+  Displays the UI and interacts with the user. It observes the data from the ViewModel and reflects the changes accordingly.
 
-- gelecekbilimde-config.properties
-- BASE_URL="https://gelecekbilimde.net/";
-- YOUTUBE_API="https://www.googleapis.com/youtube";
-- YOUTUBE_API_KEY="";
-- CHANNEL_ID="UC03cpKIZShIWoSBhfVE5bog";
-- PLAYLIST_ID="UU03cpKIZShIWoSBhfVE5bog";
+- **ViewModel**:  
+  Acts as a bridge between the Model and View. It manages the data for the UI and handles user actions. It ensures the UI logic is independent of the UI components and survives configuration changes (like screen rotation).
 
-- google-services.json
-- Firebase>Application Setting > google-services.json File Download
+### Why MVVM?
+- **Separation of Concerns**: Organized code that is easier to maintain.
+- **Data Binding**: Synchronizes the data between the ViewModel and View automatically.
+- **Testability**: Each component can be tested independently.
+
+---
+
+## ⚙️ Technologies and Libraries Used
+
+- **Kotlin**: Main programming language for Android development.
+- **Hilt-Dagger**: Dependency injection framework to provide dependencies across the app.
+- **Retrofit**: Type-safe HTTP client for making network requests.
+- **Room**: Object-relational mapping (ORM) library for local SQLite database access.
+- **Coroutines**: Asynchronous programming with Kotlin's coroutines for smooth background operations.
+- **LiveData**: Lifecycle-aware observable data holder for UI components.
+- **ViewModel**: Manages UI-related data that survives configuration changes.
+- **ViewBinding**: Type-safe access to XML layout elements without `findViewById()`.
+- **Jetpack Navigation**: Handles navigation and simplifies fragment and activity transitions.
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up the project on your local machine:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/ferhatozcelik/android-mvvm-template.git
+
+## 📄 License
+
+This version is now in **Markdown (.md)** format, ready to be used as a `README.md` file. Let me know if further changes are needed!
+

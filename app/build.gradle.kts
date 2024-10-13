@@ -1,5 +1,4 @@
 import java.io.FileInputStream
-import java.lang.System.load
 import java.util.Properties
 
 plugins {
@@ -13,8 +12,6 @@ plugins {
     id("kotlin-parcelize")
 }
 
-
-
 val properties = Properties().apply {
     load(FileInputStream(File(rootProject.rootDir, "config\\gelecekbilimde-config.properties")))
 }
@@ -27,17 +24,16 @@ android {
         viewBinding = true
         buildConfig = true
     }
-    compileSdk = 34
+    compileSdk = 35
     namespace = "org.gelecekbilimde"
     defaultConfig {
         applicationId = "com.teyyihan.gelecekbilimde"
         minSdk = 21
-        targetSdk = 33
-        versionCode = 11
-        versionName = "2.2.0"
+        targetSdk = 35
+        versionCode = 12
+        versionName = "1.2.0"
         multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
 
         /** Secret Properties**/
         buildConfigField("String", "BASE_URL", "\"${properties.getProperty("BASE_URL")}\"")
@@ -46,7 +42,6 @@ android {
         buildConfigField("String", "CHANNEL_ID", "\"${properties.getProperty("CHANNEL_ID")}\"")
         buildConfigField("String", "PLAYLIST_ID", "\"${properties.getProperty("PLAYLIST_ID")}\"")
         /**Secret Properties**/
-
 
     }
     buildTypes {
