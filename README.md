@@ -43,8 +43,3 @@ Follow these steps to set up the project on your local machine:
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/ferhatozcelik/android-mvvm-template.git
-
-## 📄 License
-
-This version is now in **Markdown (.md)** format, ready to be used as a `README.md` file. Let me know if further changes are needed!
-
